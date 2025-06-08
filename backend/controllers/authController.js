@@ -23,6 +23,7 @@ export async function registrarUsuario(req, res) {
 }
 
 
+
 export async function loginUsuario(req, res) {
   const { email, password } = req.body;
 
@@ -37,37 +38,43 @@ export async function loginUsuario(req, res) {
       return res.status(401).json({ message: 'Contraseña incorrecta' });
     }
 
-    // Puedes incluir el nombre o rol aquí si lo necesitas
-    const accesstoken = jwt.sign({ id: usuario.id, rol: usuario.rol_id }, process.env.JWT_SECRET, {
-      expiresIn: '1m'
+    const accessToken = jwt.sign({ id: usuario.id, rol: usuario.rol }, process.env.JWT_SECRET, {
+      expiresIn: '15m'
     });
 
-    const refreshToken = jwt.sign({ id: usuario.id, rol: usuario.rol_id }, process.env.JWT_SECRET, {
-      expiresIn: '1d'
+    const refreshToken = jwt.sign({ id: usuario.id }, process.env.JWT_REFRESH_SECRET, {
+      expiresIn: '7d'
     });
 
+    // Guardar el refreshToken en BD
+    db.query('UPDATE usuarios SET refresh_token = ? WHERE id = ?', [refreshToken, usuario.id]);
 
-    res.json({ accesstoken, refreshToken });
+    res.json({ accessToken, refreshToken });
   });
 }
 
-export const refreshToken = async (req, res) => {
-  // Asiganmos el token a una variable
-  const authHeader = req.headers.authorization;
-  try {
-    const refreshToken = authHeader.split(" ")[1];
-    // Verificamos el token de accesso
-    const response = await AuthService.verifyAccessToken(refreshToken);
-    // Llamamos el provider para centralizar los mensajes de respuesta
-    ResponseProvider.success(
-      res,
-      response.data,
-      response.message,
-      response.code
-    );
-  } catch (error) {
-    // Llamamos el provider para centralizar los mensajes de respuesta
-    ResponseProvider.error(res, "Error en el servidor", 500);
-  }
-};
 
+
+export function refreshToken(req, res) {
+  const { token } = req.body;
+
+  if (!token) return res.status(401).json({ message: 'Refresh token requerido' });
+
+  jwt.verify(token, process.env.JWT_REFRESH_SECRET, (err, decoded) => {
+    if (err) return res.status(403).json({ message: 'Refresh token inválido' });
+
+    db.query('SELECT * FROM usuarios WHERE id = ? AND refresh_token = ?', [decoded.id, token], (err, results) => {
+      if (err || results.length === 0) {
+        return res.status(403).json({ message: 'Refresh token no encontrado' });
+      }
+
+      const nuevoAccessToken = jwt.sign(
+        { id: results[0].id, rol: results[0].rol },
+        process.env.JWT_SECRET,
+        { expiresIn: '15m' }
+      );
+
+      res.json({ accessToken: nuevoAccessToken });
+    });
+  });
+}
