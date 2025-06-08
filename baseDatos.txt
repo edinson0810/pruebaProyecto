@@ -1,4 +1,3 @@
--- Crear base de datos
 CREATE DATABASE IF NOT EXISTS restaurant_system;
 USE restaurant_system;
 
@@ -7,6 +6,9 @@ CREATE TABLE roles (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL UNIQUE
 );
+insert into roles(id, nombre) values (1, "Admininstrador"),(2,"Mesero"),(3,"Cocinero");
+
+select * from roles;
 
 -- Tabla Usuarios
 CREATE TABLE usuarios (
@@ -18,6 +20,7 @@ CREATE TABLE usuarios (
     FOREIGN KEY (rol_id) REFERENCES roles(id)
 );
 select * from usuarios;
+alter table usuarios ADD column refresh_token text;
 
 -- Tabla Mesas
 CREATE TABLE mesas (
@@ -25,7 +28,7 @@ CREATE TABLE mesas (
     numero INT NOT NULL UNIQUE,
     capacidad INT NOT NULL
 );
-
+select * from mesas;
 -- Tabla Categorías de menú (tipo de comida, bebida, etc.)
 CREATE TABLE categorias (
     id INT AUTO_INCREMENT PRIMARY KEY,
