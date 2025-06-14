@@ -1,5 +1,5 @@
 import express from 'express';
-import { registrarUsuario, listarUsuarios,obtenerUsuario,actualizarUsuario,eliminarUsuario,loginUsuario, renovarToken } from '../controllers/authController.js';
+import { registrarUsuario, listarUsuarios, obtenerUsuario, actualizarUsuario, eliminarUsuario, loginUsuario, renovarToken } from '../controllers/authController.js';
 
 
 const router = express.Router();
