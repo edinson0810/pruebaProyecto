@@ -1,3 +1,4 @@
+// db.js
 import mysql from 'mysql2';
 
 const db = mysql.createConnection({
@@ -7,14 +8,15 @@ const db = mysql.createConnection({
   database: 'restaurant_system'
 });
 
-db.connect(err => {
+db.connect((err) => {
   if (err) {
-    console.error('Error al conectar la base de datos:', err);
+    console.error('Error de conexión a la base de datos:', err);
     return;
   }
-  console.log('Conexión exitosa a la base de datos');
+  console.log('Conectado a la base de datos MySQL');
 });
 
 export default db;
+
 
 
