@@ -1,5 +1,8 @@
 // controllers/menuController.js
 export function setupMenuController(container) {
+
+  const apiUrl = 'http://localhost:3000/api/menu';
+
   const form = container.querySelector('#menuForm');
   const nombre = container.querySelector('#nombre');
   const descripcion = container.querySelector('#descripcion');
@@ -28,6 +31,10 @@ export function setupMenuController(container) {
       window.router.navigate('/dashboard');
     });
   }
+
+  const id = idField.value;
+  const method = id ? 'PUT' : 'POST';
+  const url = id ? `${apiUrl}/${id}` : `${apiUrl}/register`;
 
   // cargar productos al iniciar
   cargarMenu();
