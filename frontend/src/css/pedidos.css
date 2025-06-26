@@ -1,0 +1,202 @@
+/* Estilo general */
+#pedidos-view {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  #pedidos-view h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  /* Formulario */
+  #pedidoForm {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+  }
+  
+  /* Fila horizontal de ID Usuario y Mesa */
+  .form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  /* Contenedor de productos */
+  #itemsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+  
+  /* Fila de producto (Producto + Cantidad + Precio + X) */
+  .item-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .item-row .form-select,
+  .item-row .form-control {
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  .item-row .removeItemBtn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    height: 38px;
+    margin-top: 2px;
+  }
+  
+  #addItemBtn {
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  /* Botón guardar */
+  #guardarPedidoBtn {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  /* Tabla de pedidos */
+  .card .table {
+    margin-top: 10px;
+  }
+  
+  /* Botones inferiores */
+  #bottom-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  #bottom-buttons .btn {
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  /* Botón volver */
+  #volverDashboardBtn {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 576px) {
+    .form-row {
+      flex-direction: column;
+    }
+  
+    .item-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .removeItemBtn {
+      width: 100%;
+    }
+  
+    #bottom-buttons {
+      flex-direction: column;
+    }
+  }
+
+  
+
+
+  /* General para botones */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    min-width: 120px;
+  }
+  
+  /* Botones principales */
+  #guardarPedidoBtn {
+    background-color: #007bff;
+    color: white;
+    margin: 10px 5px;
+  }
+  
+  #guardarPedidoBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Botones secundarios */
+  #eliminarPedidoBtn {
+    background-color: #dc3545;
+    color: white;
+    margin: 10px 5px;
+  }
+  
+  #eliminarPedidoBtn:hover {
+    background-color: #a71d2a;
+  }
+  
+  #limpiarFormularioBtn {
+    background-color: #ffc107;
+    color: #000;
+    margin: 10px 5px;
+  }
+  
+  #limpiarFormularioBtn:hover {
+    background-color: #e0a800;
+  }
+  
+  /* Botón volver */
+  #volverDashboardBtn {
+    background-color: #6c757d;
+    color: white;
+    margin-top: 20px;
+  }
+  
+  #volverDashboardBtn:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Contenedor de botones en fila */
+  .botones-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    button {
+      width: 100%;
+      min-width: unset;
+    }
+  
+    .botones-acciones {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  
