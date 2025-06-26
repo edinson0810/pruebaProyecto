@@ -1,22 +1,21 @@
 // db.js
-import mysql from 'mysql2';
+// backend/database.js
+import mysql from 'mysql2/promise';
 
-const db = mysql.createConnection({
+const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: '#Aprendiz2024',
-  database: 'restaurant_system'
+  password: '#Aprendiz2024', // reemplázalo si usas otro
+  database: 'restaurant_system',
+  waitForConnections: true,
+  connectionLimit: 10, // Número máximo de conexiones simultáneas
+  queueLimit: 0        // 0 = sin límite en la cola de espera
 });
 
-db.connect((err) => {
-  if (err) {
-    console.error('Error de conexión a la base de datos:', err);
-    return;
-  }
-  console.log('Conectado a la base de datos MySQL');
-});
+export default pool;
 
-export default db;
+
+
 
 
 
