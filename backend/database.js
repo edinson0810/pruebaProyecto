@@ -5,11 +5,11 @@ import mysql from 'mysql2/promise';
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'Yamir081015', // reemplázalo si usas otro
+  password: '#Aprendiz2024',
   database: 'restaurant_system',
   waitForConnections: true,
-  connectionLimit: 10, // Número máximo de conexiones simultáneas
-  queueLimit: 0        // 0 = sin límite en la cola de espera
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
 export default pool;
