@@ -1,9 +1,8 @@
-// frontend/src/views/usuarios/usuariosController.js (SIMPLIFICADO PARA SOLO AGREGAR)
 import { createUser } from '../../services/userService.js';
 import { displayMessage } from '../../helpers/domHelpers.js';
 
 export async function setupUsersPageLogic(containerElement) {
-    // Selectores de elementos del DOM (solo los necesarios para agregar)
+    
     const userForm = containerElement.querySelector('#userForm');
     const formMessage = containerElement.querySelector('#formMessage');
 
@@ -12,7 +11,7 @@ export async function setupUsersPageLogic(containerElement) {
     const userPasswordInput = containerElement.querySelector('#userPassword');
     const userRoleInput = containerElement.querySelector('#userRole');
 
-    // Función para resetear el formulario (simplificada)
+    
     function resetForm() {
         userForm.reset();
         displayMessage('formMessage', '', false); // Limpia el mensaje

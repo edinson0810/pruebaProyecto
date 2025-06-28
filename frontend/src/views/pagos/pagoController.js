@@ -1,12 +1,10 @@
-// src/views/pagos/pagoController.js
 const API_BASE_URL = 'http://localhost:3000/api'; 
 
-// La función setupPagoController DEBE ser la que se exporta y se llama externamente.
-// No debe contener su propio DOMContentLoaded.
+
 export function setupPagoController() {
     // console.log("PagoController: setupPagoController ejecutándose.");
 
-    // INICIO: Funcionalidad para el botón "Volver al Dashboard"
+    
     const dashboardBtn = document.getElementById('dashboard-btn');
     if (dashboardBtn) {
         dashboardBtn.addEventListener('click', () => {
@@ -16,11 +14,7 @@ export function setupPagoController() {
     } else {
         console.warn("Botón del Dashboard (#dashboard-btn) no encontrado en el DOM. Asegúrate de que el ID sea correcto en tu HTML.");
     }
-    // FIN: Funcionalidad para el botón "Volver al Dashboard"
-
-    // La función principal de carga de pedidos se llama directamente desde aquí
-    // porque se asume que setupPagoController ya será llamado DESPUÉS del DOMContentLoaded
-    // en tu archivo de entrada principal (ej. main.js o un script en el HTML).
+  
     fetchAndDisplayPedidosParaPagar(); 
 }
 

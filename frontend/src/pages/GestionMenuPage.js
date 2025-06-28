@@ -1,4 +1,4 @@
-// frontend/src/pages/GestionMenuPage.js
+
 
 export async function GestionMenuPage(containerElement) {
   try {

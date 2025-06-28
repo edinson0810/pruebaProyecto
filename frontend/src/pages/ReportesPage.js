@@ -1,7 +1,5 @@
-// frontend/src/pages/ReportesPage.js
-
 export async function ReportesPage(containerElement) {
-    try {
+  try {
     // 1. Cargar el HTML de empleados
     const response = await fetch('/src/views/reportes/index.html');
     if (!response.ok) {

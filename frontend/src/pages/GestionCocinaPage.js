@@ -1,4 +1,4 @@
-// frontend/src/pages/GestionCocinaPage.js
+
 
 export async function GestionCocinaPage(containerElement) {
    

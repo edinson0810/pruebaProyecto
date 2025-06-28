@@ -1,6 +1,6 @@
-// frontend/src/pages/RegisterPage.js
 
-import { setupRegisterPageLogic } from '../views/registro/registro.js'; // Importa la lógica JS de registro
+
+import { setupRegisterPageLogic } from '../views/registro/registro.js'; 
 
 const REGISTER_HTML_PATH = '/src/views/registro/index.html'; // Ruta al HTML del registro
 

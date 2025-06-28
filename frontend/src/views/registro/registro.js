@@ -1,7 +1,6 @@
-// frontend/src/views/registro/registro.js
 
-import { registerUser } from '../../services/authService.js'; // Rutas relativas
-import { displayMessage } from '../../helpers/domHelpers.js'; // Ajustado a 'helpers'
+import { registerUser } from '../../services/authService.js';
+import { displayMessage } from '../../helpers/domHelpers.js'; 
 
 export function setupRegisterPageLogic(containerElement) {
     const registerForm = containerElement.querySelector('#registerForm');

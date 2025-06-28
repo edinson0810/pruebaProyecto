@@ -1,9 +1,6 @@
-// frontend/src/pages/LoginPage.js
-
-// Importa la lógica JavaScript específica de la vista de login
 import { setupLoginPageLogic } from '../views/login/loginController.js';
 
-// Ruta al archivo HTML de la vista de login (tal como Vite lo vería)
+// Ruta al archivo HTML de la vista de login 
 const LOGIN_HTML_PATH = '/src/views/login/index.html';
 
 export async function LoginPage(containerElement) {

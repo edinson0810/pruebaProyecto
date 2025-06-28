@@ -1,10 +1,10 @@
-/// frontend/src/pages/GestionEmpleadosPage.js
+
 
 
 export async function GestionEmpleadosPage(containerElement) {
     const token = localStorage.getItem('token');
 
-    // Redirección si no hay sesión iniciada
+  
     if (!token) {
         window.router.navigate('/login');
         return;

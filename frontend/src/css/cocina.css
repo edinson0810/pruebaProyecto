@@ -1,104 +1,102 @@
-/* src/assets/css/cocina.css */
-
-/* Estilos globales para el cuerpo de la página */
 body {
-    font-family: 'Inter', sans-serif; /* Fuente moderna y legible */
-    margin: 0; /* Elimina el margen predeterminado del body */
-    padding: 20px; /* Añade un padding alrededor del contenido */
-    background-color: #f0f4f8; /* Un color de fondo suave */
-    color: #334155; /* Color de texto principal */
-    display: flex; /* Usa flexbox para centrar el contenido */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: flex-start; /* Alinea al inicio verticalmente para que no ocupe toda la altura */
-    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
-    box-sizing: border-box; /* Incluye padding y border en el ancho/alto */
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f0f4f8;
+  color: #334155;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-/* Contenedor principal para el contenido de la página */
+
 .container {
-    max-width: 800px; /* Ancho máximo para el contenido */
-    width: 100%; /* Asegura que ocupe todo el ancho disponible hasta el max-width */
-    background-color: #ffffff; /* Fondo blanco para el contenido */
-    padding: 30px; /* Espaciado interno generoso */
-    border-radius: 12px; /* Esquinas redondeadas */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
-    text-align: center; /* Centra el texto dentro del contenedor */
+  max-width: 800px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-/* Estilos para el encabezado principal */
+
 h1 {
-    color: #1e293b; /* Color más oscuro para el encabezado */
-    font-size: 2.5em; /* Tamaño de fuente más grande */
-    margin-bottom: 20px; /* Espacio debajo del encabezado */
-    font-weight: 700; /* Negrita */
+  color: #1e293b;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
-/* Estilos para los párrafos */
+
 p {
-    font-size: 1.1em; /* Tamaño de fuente ligeramente más grande para los párrafos */
-    line-height: 1.6; /* Altura de línea para mejor legibilidad */
-    margin-bottom: 15px; /* Espacio debajo de cada párrafo */
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+
 }
 
-/* Estilos para las listas no ordenadas */
+
 ul {
-    list-style-type: none; /* Elimina los puntos predeterminados de la lista */
-    padding: 0; /* Elimina el padding predeterminado de la lista */
-    margin-top: 20px; /* Espacio encima de la lista */
-    margin-bottom: 20px; /* Espacio debajo de la lista */
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
 }
 
-/* Estilos para los elementos de la lista */
+
 li {
-    background-color: #e2e8f0; /* Fondo para cada elemento de la lista */
-    margin-bottom: 8px; /* Espacio entre elementos de la lista */
-    padding: 10px 15px; /* Espaciado interno */
-    border-radius: 8px; /* Esquinas redondeadas */
-    font-size: 1em; /* Tamaño de fuente */
-    color: #475569; /* Color de texto */
-    text-align: left; /* Alinea el texto a la izquierda dentro del elemento */
+  background-color: #e2e8f0;
+  margin-bottom: 8px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #475569;
+  text-align: left;
 }
 
-/* Estilos para los enlaces */
+
 a {
-    color: #3b82f6; /* Color azul para los enlaces */
-    text-decoration: none; /* Elimina el subrayado predeterminado */
-    font-weight: 600; /* Hace el texto del enlace un poco más grueso */
-    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
-/* Efecto hover para los enlaces */
+
 a:hover {
-    color: #2563eb; /* Color más oscuro al pasar el ratón */
-    text-decoration: underline; /* Subraya al pasar el ratón */
+  color: #2563eb;
+  text-decoration: underline;
 }
 
-/* Media Queries para responsividad */
+
 @media (max-width: 768px) {
-    .container {
-        padding: 20px; /* Reduce el padding en pantallas más pequeñas */
-    }
+  .container {
+    padding: 20px;
+  }
 
-    h1 {
-        font-size: 2em; /* Reduce el tamaño del encabezado */
-    }
+  h1 {
+    font-size: 2em;
+  }
 
-    p {
-        font-size: 1em; /* Reduce el tamaño del párrafo */
-    }
+  p {
+    font-size: 1em;
+  }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 10px; /* Reduce el padding global en pantallas muy pequeñas */
-    }
+  body {
+    padding: 10px;
+  }
 
-    .container {
-        border-radius: 8px; /* Reduce un poco el radio del borde */
-        padding: 15px; /* Reduce el padding del contenedor */
-    }
+  .container {
+    border-radius: 8px;
+    padding: 15px;
+  }
 
-    h1 {
-        font-size: 1.8em; /* Más reducción para el encabezado */
-    }
+  h1 {
+    font-size: 1.8em;
+  }
 }

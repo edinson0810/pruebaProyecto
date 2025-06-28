@@ -1,4 +1,3 @@
-// frontend/src/pages/EstadoPedidosPage.js
 
 export async function EstadoPedidosPage(containerElement) {
    try {

@@ -1,4 +1,3 @@
-// frontend/src/views/empleados/empleadosController.js
 export function setupEmpleadoController(containerElement) {
   const token = localStorage.getItem('token');
   const apiUrl = 'http://localhost:3000/api/auth';
@@ -64,9 +63,9 @@ export function setupEmpleadoController(containerElement) {
       rol_id: parseInt(rolField.value)
     };
 
-   const id = idField.value;
-const method = id ? 'PUT' : 'POST';
-const url = id ? `${apiUrl}/${id}` : `${apiUrl}/register`;
+    const id = idField.value;
+    const method = id ? 'PUT' : 'POST';
+    const url = id ? `${apiUrl}/${id}` : `${apiUrl}/register`;
 
 
     try {
